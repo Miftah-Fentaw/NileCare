@@ -38,7 +38,7 @@ class _OnboardingState extends State<Onboarding> {
       backgroundColor: Colors.black,
       body: Stack(
         children: [
-          // PageView for Background Images
+
           PageView.builder(
             controller: _pageController,
             itemCount: onboardingData.length,
@@ -51,12 +51,12 @@ class _OnboardingState extends State<Onboarding> {
               final onboarding = onboardingData[index];
               return Stack(
                 children: [
-                  // Full Screen Image
+                 
                   Positioned.fill(
                     child: Image.asset(onboarding['image']!, fit: BoxFit.cover),
                   ),
 
-                  // Gradient Overlay for readability
+                  
                   Positioned.fill(
                     child: Container(
                       decoration: BoxDecoration(
@@ -75,7 +75,7 @@ class _OnboardingState extends State<Onboarding> {
                     ),
                   ),
 
-                  // Content
+                  
                   SafeArea(
                     child: Padding(
                       padding: const EdgeInsets.symmetric(
@@ -86,7 +86,7 @@ class _OnboardingState extends State<Onboarding> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           const Spacer(),
-                          // Text Area
+                        
                           Text(
                             onboarding['title']!,
                             style: GoogleFonts.outfit(
@@ -107,7 +107,7 @@ class _OnboardingState extends State<Onboarding> {
                           ),
                           const SizedBox(
                             height: 120,
-                          ), // Space for bottom controls
+                          ), 
                         ],
                       ),
                     ),
@@ -117,7 +117,7 @@ class _OnboardingState extends State<Onboarding> {
             },
           ),
 
-          // Skip Button (Top Right)
+          
           if (_currentPage < 0)
             Positioned(
               top: MediaQuery.of(context).padding.top + 20,
@@ -135,7 +135,7 @@ class _OnboardingState extends State<Onboarding> {
               ),
             ),
 
-          // Bottom Controls
+          
           Positioned(
             bottom: 20,
             left: 0,
@@ -143,7 +143,7 @@ class _OnboardingState extends State<Onboarding> {
             child: Column(
               children: [
                 if (_currentPage != 2)
-                  // Swipe Guide
+                
                   Container(
                     padding: const EdgeInsets.symmetric(
                       horizontal: 20,
@@ -175,7 +175,7 @@ class _OnboardingState extends State<Onboarding> {
                     ),
                   )
                 else
-                  // Get Started Button
+                  
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 24.0),
                     child: SizedBox(
@@ -202,7 +202,7 @@ class _OnboardingState extends State<Onboarding> {
                     ),
                   ),
                 const SizedBox(height: 32),
-                // Indicators
+                
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: List.generate(

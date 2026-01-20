@@ -11,7 +11,6 @@ class SignInPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // active keyboard pixel error fix
       resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Padding(
@@ -62,7 +61,6 @@ class SignInPage extends StatelessWidget {
                 context.push('/main');
               },),
               const SizedBox(height: 20),
-              // line
               const Divider(),
               const SizedBox(height: 20),
               Row(
