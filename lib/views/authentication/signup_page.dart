@@ -11,7 +11,6 @@ class SignUpPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // active keyboard pixel error fix
       resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Padding(

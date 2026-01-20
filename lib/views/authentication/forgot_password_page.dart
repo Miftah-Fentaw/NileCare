@@ -20,7 +20,6 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
         _currentStep++;
       });
     } else {
-      // Finalize and go back to login
       context.go('/login');
     }
   }
@@ -28,21 +27,21 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF0E1528), // Dark background from image
+      backgroundColor: const Color(0xFF0E1528),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const SizedBox(height: 40),
-              // Step Indicators
               _buildStepIndicator(),
               const SizedBox(height: 60),
-              // Content based on step
+
               Expanded(
                 child: SingleChildScrollView(child: _buildStepContent()),
               ),
-              // Back to Sign In
+             
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 20),
                 child: TextButton.icon(
@@ -106,7 +105,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
         ),
         const SizedBox(height: 8),
         Text(
-          label.split(' ').join('\n'), // Multi-line label
+          label.split(' ').join('\n'), 
           textAlign: TextAlign.center,
           style: GoogleFonts.outfit(
             fontSize: 10,
